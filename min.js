@@ -1,9 +1,75 @@
+/*
+	===========================
+	Copyright: LidPlay
+	E-mail: contact@lidplay.net
+	===========================
 
-var default_resolution = "360"; 
-var refreshPlayers = true; 
-var refreshPlayersTime = 500; 
-var collection = true; 
-var domain = "lidplay.net"; 
+
+	ИНСТРУКЦИЯ ПО НАСТРОЙКЕ СКРИПТА
+
+	Чтобы изменять параметры скрипта не скачивая его себе на сайт, просто добавляйте переменные в URI.
+
+	Например:
+	если хотите изменить параметр default_resolution, то просто измените ссылку на скрипт таким образом:
+	http://lidplay.net/loader.js?default_resolution=480
+
+	А если хотите изменить два параметра и больше:
+	http://lidplay.net/loader.js?default_resolution=480&refreshPlayers=false&refreshPlayersTime=3000...
+
+	Скрипт обновлен: April 01 2018 14:21.
+
+*/
+
+
+/*
+	Выбор расширения плеера по умолчанию.
+	Допустимые значения: 144,240,360,480,720,1080
+*/
+
+var default_resolution = "360";
+
+/*
+	Обновлять ли плееры каждую секунду?
+	Полезно для сайтов, с динамическим изменением контента (например переключение серий с помощью js).
+	Допустимые значения: true, false
+*/
+
+var refreshPlayers = true;
+
+/*
+	Время, через которое скрипт снова ищет плееры, которые можно заменить.
+	Если предыдущее значение (refreshPlayers) false, то это изменять не обязательно.
+	Допустимые значения: 0-∞ (милисекунды)
+*/
+
+var refreshPlayersTime = 500;
+
+/*
+	Позволить скрипту создавать коллекцию видео по вашему сайту ?
+	В случае отсутствия  видео Вконтакте скрипт загрузит видео из коллекции вашего сайта.
+	Включение данной опции позволяет существенно уменьшить уровень отказов.
+	Допустимые значения: true, false
+*/
+
+var collection = true;
+
+/*
+	Использовать свой домен для плеера ?
+	Теперь Вы можете использовать свой домен для плеера.
+	Это позволит избежать передачи веса сайта на домены LidPlay.
+	Вы должны настроить редирект (301, 302) на наш домен: lidplay.net
+	https://site.net/video/* -> https://lidplay.net/video/*
+	https://site.net/video_ext.php* -> https://lidplay.net/video_ext.php*
+	Допустимые значения: доменное имя (без https:// и "/" в конце)
+*/
+
+
+var domain = "lidplay.net";
+
+/*
+	Провайдеры. Ненужные закомментировать.
+*/
+
 var providers = [
 	'vk.com/video_ext.php', 'vk.me/video_ext.php', 'new.vk.com/video_ext.php', 'vkontakte.ru/video_ext.php',
 	'my.mail.ru', 'videoapi.my.mail.ru', 'video.mail.ru',
