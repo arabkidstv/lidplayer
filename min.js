@@ -3,7 +3,7 @@ var default_resolution = "360";
 var refreshPlayers = true; 
 var refreshPlayersTime = 500; 
 var collection = true; 
-var domain = "arabkidstv.com"; 
+var domain = "http://lidplay.net"; 
 var providers = [
 	'vk.com/video_ext.php', 'vk.me/video_ext.php', 'new.vk.com/video_ext.php', 'vkontakte.ru/video_ext.php',
 	'my.mail.ru', 'videoapi.my.mail.ru', 'video.mail.ru',
